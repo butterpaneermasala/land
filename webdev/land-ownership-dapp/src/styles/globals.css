@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 244, 244, 244;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Neo-brutalist styling */
+.neo-brutalist-button {
+  @apply bg-black text-white py-2 px-4 font-bold uppercase tracking-wider border-4 border-black transition-all shadow-brutal-sm hover:shadow-brutal;
+}
+
+.neo-brutalist-card {
+  @apply bg-white border-4 border-black p-6 shadow-brutal;
+}
+
+.glassmorphic {
+  @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-lg rounded-xl;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom slow spin animation */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f4f4f4 25%, #e0e0e0 50%, #f4f4f4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.aurora-bg {
+  background: linear-gradient(-45deg, #d1fae5, #a7f3d0, #6ee7b7, #34d399);
+  background-size: 400% 400%;
+  animation: auroraMove 12s ease infinite;
+}
+
+@keyframes auroraMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.night-gradient {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+}
